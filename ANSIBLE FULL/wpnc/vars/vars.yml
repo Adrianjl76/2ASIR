@@ -1,6 +1,6 @@
 ---
 #VARIABLES DE WORDPRESS
-
+wpHost: "192.168.59.40"
 wpDomain: "wp"
 wpIP: "127.0.0.1"
 wpDBName: "wpdb"
@@ -9,6 +9,7 @@ wpDBPassword: "wpdbu"
 wpVirtualHostFile: "{{ wpDomain }}.conf"
 
 #VARIABLES DE NEXTCLOUD
+nxHost: "192.168.59.40"
 nxDomain: "nx"
 nxIP: "127.0.0.1"
 nxDBName: "nxdb"
@@ -26,10 +27,14 @@ httpPort: "8080"
 
 nextcloud_version: "30.0.4"
 
+
 #CREAR CERTIFICADOS CON EL COMMONNAME Y EL ACTION
 commonNames:
      - "{{wpDomain}}"
      - "{{nxDomain}}"
+
+#HOSTS VARIABLE PARA /ETC/HOSTS
+server_local: "127.0.0.1"
 
 #VSFTPD
 vsftpdPasswp: "user1"
