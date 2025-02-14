@@ -149,7 +149,7 @@
 
     - name: Crear configuración de .htaccess
       template:
-        src: "files/.htaccess.pam.conf.j2"
+        src: "files/htaccess.pam.conf.j2"
         dest: "/usr/share/phpmyadmin/.htaccess"
 
     - name: Crear archivo .htaccess para phpMyAdmin
