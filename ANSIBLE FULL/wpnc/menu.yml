@@ -21,8 +21,17 @@
         path: /etc/hosts
         insertafter: "127.0.0.1 localhost"
         line: "127.0.0.1 {{ wpDomain }}"
-      when: action in ["0", "2"]
+        line: "127.0.0.1 {{ nxDomain }}"
+      when: action in ["0", "1", "2"]
 
+    - name: Añadir dominio a /etc/hosts en servidor_local
+      ansible.builtin.lineinfile:
+        path: /etc/hosts
+        insertafter: "192.168.59.40 localhost"
+        line: "192.168.59.40 {{ wpDomain }}"
+        line: "192.168.59.40 {{ nxDomain }}"
+      when: action in ["0", "1", "2"]
+      delegate_to: "{{ server_local }}"
 
     - name: Actualizar repositorios
       apt:
@@ -190,8 +199,6 @@
         state: restarted
       tags: [ phpmyadmin ]
 
-
-
     # Nginx Configuration
     - name: Install Nginx
       apt:
@@ -246,7 +253,6 @@
       become: yes
       when: action in ["0", "2"]
 
-
     - name: Reiniciar Nginx para aplicar cambios
       service:
         name: nginx
@@ -257,4 +263,3 @@
 
     - name: Ejecutar instalación de VSFTP
       import_tasks: "includes/subVsftpd.yml"
-
