@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<biblioteca>
+    <libro>
+        <titulo>1984</titulo>
+        <autor>George Orwell</autor>
+        <año>1949</año>
+        <genero>Distopía</genero>
+    </libro>
+    <libro>
+        <titulo>Matar a un ruiseñor</titulo>
+        <autor>Harper Lee</autor>
+        <año>1960</año>
+        <genero>Ficción</genero>
+    </libro>
+    <libro>
+        <titulo>El gran Gatsby</titulo>
+        <autor>F. Scott Fitzgerald</autor>
+        <año>1925</año>
+        <genero>Clásico</genero>
+    </libro>
+</biblioteca>
+
